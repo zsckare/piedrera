@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @titular.nombre %>
+</p>
+
+<p>
+  <strong>Paterno:</strong>
+  <%= @titular.paterno %>
+</p>
+
+<p>
+  <strong>Materno:</strong>
+  <%= @titular.materno %>
+</p>
+
+<%= link_to 'Edit', edit_titular_path(@titular) %> |
+<%= link_to 'Back', titulars_path %>
