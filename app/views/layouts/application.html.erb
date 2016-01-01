@@ -28,7 +28,9 @@
           <%end%>
         </ul>
         <ul class="side-nav" id="mobile-demo">
+
         <%if user_signed_in?%>
+            <li>Bienvenido<a href=""></a></li>
             <li><%= link_to "Reportes", report_index_path  %></li>
             <li><%= link_to "Liquidaciones", liquidations_path  %></li>
             <li><%= link_to "Choferes", drivers_path  %></li>

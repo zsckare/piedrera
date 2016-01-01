@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160101191135) do
+ActiveRecord::Schema.define(version: 20160101230456) do
 
   create_table "drivers", force: :cascade do |t|
     t.string   "nombre"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20160101191135) do
     t.integer  "nivel"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
