@@ -1,0 +1,56 @@
+<%= form_for(@liquidation) do |f| %>
+  <% if @liquidation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@liquidation.errors.count, "error") %> prohibited this liquidation from being saved:</h2>
+
+      <ul>
+      <% @liquidation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field col s12 m12 l4">
+      <%= f.label :camion %>
+      <%= f.collection_select :camion, Truck.all, :numero, :numero, include_blank: true%> 
+    </div>
+    <div class="input-field col s12 m12 l4">    
+      <%= f.label :driver_id %>
+      <%= f.collection_select :driver_id, Driver.all, :id, :NombreCompleto, include_blank: true%>  
+    </div>
+    <div class="input-field col s12 m12 l4">
+    <%= f.label :turno %>
+    <%= f.collection_select :turno, Turno.all, :nombre, :nombre, include_blank: true%>  
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12 m12 l3">
+      <%= f.label :efectivo %><br>
+      <%= f.text_field :efectivo %>
+    </div>
+    <div class="input-field col s12 m12 l3">
+      <%= f.label :gastos %><br>
+      <%= f.text_field :gastos %>
+    </div>
+    <div class="input-field col s12 m12 l3">
+      <%= f.label :terreno %><br>
+      <%= f.text_field :terreno %>
+    </div>
+    <div class="input-field col s12 m12 l3">
+      <%= f.label :ahorro %><br>
+      <%= f.text_field :ahorro %>
+    </div>    
+  </div>
+  <div class="row">
+     <div class="input-field col s12 m12 l3">
+    <%= f.label :otro %><br>
+    <%= f.text_field :otro %>
+  </div>
+  </div>
+   <%=f.hidden_field :fecha%>
+  <div class="center-align">
+    <%= f.submit class: 'btn' %>
+  </div>
+<% end %>

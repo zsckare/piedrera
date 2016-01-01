@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="row">
+    <h4 class="center-align">Reporte de liquidaciones</h4>
+  </div>
+  <div class="row">
+  <div class="col s12 m12 l12">
+    <table>
+  <thead>
+    <tr>
+      <th>Camion</th>
+      
+      <th>Turno</th>
+      <th>Efectivo</th>
+      <th>Gastos</th>
+      <th>Terreno</th>
+      <th>Ahorro</th>
+      <th>Otro</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @liquidations.each do |liquidation| %>
+      <tr>
+        <td><%= link_to liquidation.camion, liquidation%></td>
+        
+        <td><%= liquidation.turno %></td>
+        <td><%= liquidation.efectivo %></td>
+        <td><%= liquidation.gastos %></td>
+        <td><%= liquidation.terreno %></td>
+        <td><%= liquidation.ahorro %></td>
+        <td><%= liquidation.otro %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  </div>
+</div>
+</div>

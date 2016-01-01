@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Truck:</strong>
+  <%= @liquidation.camion %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @driver.NombreCompleto %>
+</p>
+
+<p>
+  <strong>Turno:</strong>
+  <%= @liquidation.turno %>
+</p>
+
+<p>
+  <strong>Efectivo:</strong>
+  <%= @liquidation.efectivo %>
+</p>
+
+<p>
+  <strong>Gastos:</strong>
+  <%= @liquidation.gastos %>
+</p>
+
+<p>
+  <strong>Terreno:</strong>
+  <%= @liquidation.terreno %>
+</p>
+
+<p>
+  <strong>Ahorro:</strong>
+  <%= @liquidation.ahorro %>
+</p>
+
+<p>
+  <strong>Otro:</strong>
+  <%= @liquidation.otro %>
+</p>
+
+<%= link_to 'Edit', edit_liquidation_path(@liquidation) %> |
+<%= link_to 'Back', liquidations_path %>

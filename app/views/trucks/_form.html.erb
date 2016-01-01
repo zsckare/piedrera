@@ -15,9 +15,9 @@
     <%= f.label :numero %><br>
     <%= f.text_field :numero %>
   </div>
-  <div class="field">
+  <div class="field">  
     <%= f.label :titular_id %><br>
-    <%= f.text_field :titular_id %>
+    <%= f.collection_select :titular_id, Titular.all, :id, :NombreCompleto, include_blank: true%>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+select{
+	display: block !important;
+	background-color: rgba(255, 255, 255, 0.9);
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #F2F2F2;
+	border-radius: 2px;
+	height: 3rem;
+}
+.padding-largo{
+	padding: 1.2em !important;
+}
+.top-space{
+	margin-top: .5em !important;
+}

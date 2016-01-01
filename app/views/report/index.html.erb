@@ -1,0 +1,35 @@
+ <div class="row">
+    <h4 class="center-align">Reporte de liquidaciones</h4>
+</div>
+<div class="row">
+	<div class="col s12 m12 l12">
+		<form action="/report/search" method="get">
+			<div class="row">
+				<div class="input-field col s12 m12 l2">
+					<select name="tipo" required>
+						<option value="" disabled selected>Selecione una opcion</option>
+						<option value="2" >Camion</option>
+						<option value="1" onclick="getDrivers();">Chofer</option>
+					</select>
+				</div>
+				<div class="input-field col s12 m12 l4 " id="buscar">
+					<label for="bus">Buscar</label>
+					<input type="text" name="q" id="bus" required>
+				
+				</div>
+				<div class="input-field col s12 m12 l2 ">
+					<label for="">Desde</label>
+					<input type="date" class="datepicker" name="desde" required>
+				</div>
+				<div class="input-field col s12 m12 l2 ">
+					<label for="">Hasta</label>
+					<input type="date" class="datepicker" name="hasta" required>
+				</div>
+				<div class="col s12 m12 l1 " style="margin-top:1em !important;">
+					<input type="submit" value="Generar" class="btn blue">
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>

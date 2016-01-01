@@ -1,8 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col s12 m12 l12">
+    <p id="notice"><%= notice %></p>
 
-<h1>Listing Drivers</h1>
+<div class="row">
+  <h4 class="center-align">
+    Lista de Choferes
+  </h4>
+</div>
 
-<table>
+<div class="row">
+  <table>
   <thead>
     <tr>
       <th>Nombre</th>
@@ -20,14 +27,21 @@
         <td><%= driver.paterno %></td>
         <td><%= driver.materno %></td>
         <td><%= driver.sindical %></td>
-        <td><%= link_to 'Show', driver %></td>
-        <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
-        <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="right">
+        <%= link_to 'Ver', driver, class: 'btn blue' %>
+        <%= link_to 'Editar', edit_driver_path(driver), class: 'btn' %>
+        <%= link_to 'Eliminar', driver, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn red' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+</div>
 
-<%= link_to 'New Driver', new_driver_path %>
+<div class="row">
+  <%= link_to 'Nuevo Chofer', new_driver_path, class: 'btn blue' %>  
+</div>
+
+
+  </div>
+</div>
