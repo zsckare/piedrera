@@ -6,7 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body class="grey lighten-5" >
   <div class="navbar-fixed light-blue darken-3">
@@ -14,22 +15,32 @@
       <div class="nav-wrapper ">
         
         <%= link_to "Inicio", root_path, class: 'brand-logo' %>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><%= link_to "Reportes", report_index_path  %></li>
-          <li><%= link_to "Liquidaciones", liquidations_path  %></li>
-          <li><%= link_to "Choferes", drivers_path  %></li>
-          <li><%= link_to "Titulares", titulars_path  %></li>
-          <li><%= link_to "Camiones", trucks_path  %></li>
-          <li><%= link_to "Rutas", ruta_path  %></li>
+          <%if user_signed_in?%>
+            <li><%= link_to "Reportes", report_index_path  %></li>
+            <li><%= link_to "Liquidaciones", liquidations_path  %></li>
+            <li><%= link_to "Choferes", drivers_path  %></li>
+            <li><%= link_to "Titulares", titulars_path  %></li>
+            <li><%= link_to "Camiones", trucks_path  %></li>
+            <li><%= link_to "Rutas", ruta_path %></li>
+            <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, class: 'ion-log-out' %> </li>
+          <%end%>
         </ul>
+        <ul class="side-nav" id="mobile-demo">
+        <%if user_signed_in?%>
+            <li><%= link_to "Reportes", report_index_path  %></li>
+            <li><%= link_to "Liquidaciones", liquidations_path  %></li>
+            <li><%= link_to "Choferes", drivers_path  %></li>
+            <li><%= link_to "Titulares", titulars_path  %></li>
+            <li><%= link_to "Camiones", trucks_path  %></li>
+            <li><%= link_to "Rutas", ruta_path %></li>
+            <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, class: 'ion-log-out' %> </li>
+          <%end%>
+      </ul>
       </div>
     </nav>
   </div>
-  <%if notice%>
-  <p class="notice">    <%=notice%>  </p>
-  <%elsif alert%>
-  <p class="alert">    <%=alert%>  </p>
-  <%end%>
 	<div class="container">
 		<div class="row">
 			<div class="col s12 m12 l12 card padding-largo">
@@ -37,12 +48,19 @@
 			</div>
 		</div>
 	</div>
+  
+  <%if notice%>
+  <p class="notice">    <%=notice%>  </p>
+  <%elsif alert%>
+  <p class="alert">    <%=alert%>  </p>
+  <%end%>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js" ></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script>
    $('.datepicker').pickadate({
     format: "yyyy-mm-dd"
    });
+   $(".button-collapse").sideNav();
   </script>
 </body>
 </html>

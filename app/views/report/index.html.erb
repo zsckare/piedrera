@@ -8,14 +8,13 @@
 				<div class="input-field col s12 m12 l2">
 					<select name="tipo" required>
 						<option value="" disabled selected>Selecione una opcion</option>
-						<option value="2" >Camion</option>
+						<option value="2" onclick="resetForm();">Camion</option>
 						<option value="1" onclick="getDrivers();">Chofer</option>
 					</select>
 				</div>
 				<div class="input-field col s12 m12 l4 " id="buscar">
 					<label for="bus">Buscar</label>
-					<input type="text" name="q" id="bus" required>
-				
+					<input type="text" name="q" id="bus" required>				
 				</div>
 				<div class="input-field col s12 m12 l2 ">
 					<label for="">Desde</label>

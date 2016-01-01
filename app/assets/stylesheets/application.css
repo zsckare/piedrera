@@ -28,3 +28,31 @@ select{
 .top-space{
 	margin-top: .5em !important;
 }
+.notice, .alert{
+
+  border-radius: 2px;
+  bottom: 10;
+  width: auto;
+  clear: both;
+  margin-top: 10px;
+  position: relative;
+  max-width: 100%;
+  height: 80px;
+  line-height: 60px;
+  background-color: #323232;
+  padding: 0 25px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #fff;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between; 
+}

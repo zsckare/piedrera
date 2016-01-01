@@ -32,12 +32,10 @@ var url="http://" + window.location.hostname+":"+puerto;
  	var txt = "";
  	txt = '<select name="q" id="">';
  	uri = "";
-	
-//    $("#buscar").html(txt);
 	uri = url+"/drivers.json";
-	console.log("url="+uri);
+	//console.log("url="+uri);
 	$.getJSON(uri,function(datos){
-		console.log("Ejecutando getJson");
+	//	console.log("Ejecutando getJson");
 		$.each(datos, function(i, item){	
 			txt+='<option value="'+item.id+'">'+item.nombre+" "+item.paterno+" "+item.materno+'</option>';		
 		});
@@ -45,4 +43,9 @@ var url="http://" + window.location.hostname+":"+puerto;
 		txt+='</select>';
 		$("#buscar").html(txt);
 	});
+ }
+ function resetForm() {
+ 	$("#buscar").empty();
+ 	text = '<label for="bus">Buscar</label>	<input type="text" name="q" id="bus" required>';
+ 	$("#buscar").html(text);
  }
