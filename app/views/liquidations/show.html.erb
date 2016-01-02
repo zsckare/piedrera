@@ -1,43 +1,54 @@
+<div class="row">
+  <div class="row" id="print" >
+  <div class="row">
+    <h4 class="center-align">Liquidacion</h4>
+  </div>
+  <div class="row">
+    <divclass="col s12 m12 l12 padding-largo">
+      <div class="row">
+        <div class="center-align">
+        <p><strong>Fecha:</strong><%= @liquidation.fecha %></p>
+          <p>
+            <strong>Chofer:</strong>
+            <%= @driver.NombreCompleto %>
+          </p>
+            
+          <p>
+            <strong>Camion:</strong>
+            Numero: <%= @liquidation.camion %>
+            <strong>Turno:</strong>
+            <%= @liquidation.turno %>
+          </p>
+          
+          <p>
+            <strong>Efectivo:</strong>
+            <%= @liquidation.efectivo %>
+           
+            <strong>Gastos:</strong>
+            <%= @liquidation.gastos %>
+          </p>
+          
+          <p>
+            <strong>Terreno:</strong>
+            <%= @liquidation.terreno %>
+            <strong>Ahorro:</strong>
+            <%= @liquidation.ahorro %>
+          </p>
+          
+          <p>
+            <strong>Otro:</strong>
+            <%= @liquidation.otro %>
+          </p>
+        </div>
 
-<p>
-  <strong>Truck:</strong>
-  <%= @liquidation.camion %>
-</p>
+      </div>
 
-<p>
-  <strong>Driver:</strong>
-  <%= @driver.NombreCompleto %>
-</p>
-
-<p>
-  <strong>Turno:</strong>
-  <%= @liquidation.turno %>
-</p>
-
-<p>
-  <strong>Efectivo:</strong>
-  <%= @liquidation.efectivo %>
-</p>
-
-<p>
-  <strong>Gastos:</strong>
-  <%= @liquidation.gastos %>
-</p>
-
-<p>
-  <strong>Terreno:</strong>
-  <%= @liquidation.terreno %>
-</p>
-
-<p>
-  <strong>Ahorro:</strong>
-  <%= @liquidation.ahorro %>
-</p>
-
-<p>
-  <strong>Otro:</strong>
-  <%= @liquidation.otro %>
-</p>
-
-<%= link_to 'Edit', edit_liquidation_path(@liquidation) %> |
-<%= link_to 'Back', liquidations_path %>
+</div>
+  </div>
+</div>
+<div class="row">
+  <div class="center-align">          
+    <a href="javascript:imprSelec('print')" target="_parent" class="btn blue">Imprimir</a><%= link_to 'Regresar', liquidations_path, class: 'btn' %>
+  </div>
+</div>
+</div>

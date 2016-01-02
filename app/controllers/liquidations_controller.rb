@@ -4,7 +4,7 @@ class LiquidationsController < ApplicationController
   # GET /liquidations
   # GET /liquidations.json
   def index
-    @liquidations = Liquidation.all
+    @liquidations = Liquidation.all.order("created_at desc").paginate(page: params[:page], per_page: 7)
   end
 
   # GET /liquidations/1

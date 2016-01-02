@@ -4,7 +4,7 @@ class TrucksController < ApplicationController
   # GET /trucks
   # GET /trucks.json
   def index
-    @trucks = Truck.all
+    @trucks = Truck.all.paginate(page: params[:page], per_page: 7)
   end
 
   # GET /trucks/1

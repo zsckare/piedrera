@@ -4,7 +4,7 @@ class RutaController < ApplicationController
   # GET /ruta
   # GET /ruta.json
   def index
-    @ruta = Rutum.all
+    @ruta = Rutum.all.paginate(page: params[:page], per_page: 7)
   end
 
   # GET /ruta/1

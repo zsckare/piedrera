@@ -13,9 +13,12 @@
     <% @turnos.each do |turno| %>
       <tr>
         <td><%= turno.nombre %></td>
-        <td><%= link_to 'Show', turno %></td>
-        <td><%= link_to 'Edit', edit_turno_path(turno) %></td>
-        <td><%= link_to 'Destroy', turno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', turno %>
+        <%= link_to 'Edit', edit_turno_path(turno) %>
+        <% if current_user.nivel == 1 %>
+        <%= link_to 'Destroy', turno, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

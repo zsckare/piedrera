@@ -49,3 +49,22 @@ var url="http://" + window.location.hostname+":"+puerto;
  	text = '<label for="bus">Buscar</label>	<input type="text" name="q" id="bus" required>';
  	$("#buscar").html(text);
  }
+
+ function imprSelec(nombre)
+{
+var articulo = document.getElementById(nombre);
+var ventimp = window.open(' ','Nota','no','no','50','no','no','no','no','no','no','no','no','50');
+ventimp.document.write(articulo.innerHTML );
+ventimp.document.close();
+ventimp.print( );
+ventimp.close();
+}
+
+function paginas() {
+	previus = '<span class="ion-chevron-left"></span>';
+	next = '<span class="ion-chevron-right"></span>';
+	$(".previous_page").empty();
+	$(".previous_page").html(previus);
+	$(".next_page").empty();
+	$(".next_page").html(next);
+}

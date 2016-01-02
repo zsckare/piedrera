@@ -20,7 +20,10 @@
         <td class="right" >
         <%= link_to 'Ver', truck, class: 'btn blue' %>
         <%= link_to 'Editar', edit_truck_path(truck), class: 'btn' %>
-        <%= link_to 'Eliminar', truck, method: :delete, data: { confirm: '¿Desea Eliminar Este Registro?' }, class: 'btn red' %></td>
+        <% if current_user.nivel == 1 %>
+        <%= link_to 'Eliminar', truck, method: :delete, data: { confirm: '¿Desea Eliminar Este Registro?' }, class: 'btn red' %>
+        <% end%>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -30,6 +33,9 @@
 <div class="row">
   <%= link_to 'Nuevo Camion', new_truck_path, class: 'btn blue' %>  
 </div>
+    <div class="row">
+      <%= will_paginate @trucks %>
+    </div>
 
 
   </div>

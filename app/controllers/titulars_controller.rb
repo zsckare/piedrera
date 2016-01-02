@@ -4,7 +4,7 @@ class TitularsController < ApplicationController
   # GET /titulars
   # GET /titulars.json
   def index
-    @titulars = Titular.all
+    @titulars = Titular.all.paginate(page: params[:page], per_page: 7)
   end
 
   # GET /titulars/1
