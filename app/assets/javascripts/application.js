@@ -31,19 +31,58 @@ var url="http://" + window.location.hostname+":"+puerto;
  	$("#buscar").empty();
  	var txt = "";
  	txt = '<select name="q" id="">';
+ 	txt+='<option value="" disabled selected>Choferes</option>';
  	uri = "";
 	uri = url+"/drivers.json";
-	//console.log("url="+uri);
 	$.getJSON(uri,function(datos){
-	//	console.log("Ejecutando getJson");
 		$.each(datos, function(i, item){	
 			txt+='<option value="'+item.id+'">'+item.nombre+" "+item.paterno+" "+item.materno+'</option>';		
 		});
-	
 		txt+='</select>';
 		$("#buscar").html(txt);
 	});
  }
+  function getTrucks () {
+ 	$("#buscar").empty();
+ 	var txt = "";
+ 	txt = '<select name="q" id="">';
+ 	txt+='<option value="" disabled selected>Camiones</option>';
+ 	uri = "";
+	uri = url+"/trucks.json";
+	$.getJSON(uri,function(datos){
+		$.each(datos, function(i, item){	
+			txt+='<option value="'+item.numero+'">'+item.numero+'</option>';		
+		});
+		txt+='</select>';
+		$("#buscar").html(txt);
+	});
+ }
+ function getCamiones() {
+ 	$("#camiones").empty();
+ 	var txt = "";
+ 	txt = '<select name="qcamion" id="">';
+ 	txt+='<option value="" disabled selected>Camiones</option>';
+ 	uri = "";
+	uri = url+"/trucks.json";
+	$.getJSON(uri,function(datos){
+		$.each(datos, function(i, item){	
+			txt+='<option value="'+item.numero+'">'+item.numero+'</option>';		
+		});
+		txt+='</select>';
+		$("#camiones").html(txt);
+	});
+ }
+
+ function getAll() {
+ 	$("#buscar").empty();
+ 	nuevoDiv = '<div class="col s12 m12 l6 " id="camiones"></div>';
+ 	$("#buscar").removeClass('l12');
+ 	$("#buscar").addClass('l6');
+ 	$("#filtros").append(nuevoDiv);
+ 	getDrivers();
+ 	getCamiones();
+ }
+
  function resetForm() {
  	$("#buscar").empty();
  	text = '<label for="bus">Buscar</label>	<input type="text" name="q" id="bus" required>';

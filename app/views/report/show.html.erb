@@ -2,9 +2,10 @@
   <div class="row">
     <h4 class="center-align">Reporte de liquidaciones</h4>
   </div>
-  <div class="row">
+  <div class="row padding-largo">
   <div class="col s12 m12 l12">
-    <table>
+  <div class="row">
+  <table>
   <thead>
     <tr>
       <th>Camion</th>
@@ -17,7 +18,7 @@
       <th>Otro</th>
     </tr>
   </thead>
-
+<% @acum = 0 %>
   <tbody>
     <% @liquidations.each do |liquidation| %>
       <tr>
@@ -29,11 +30,16 @@
         <td><%= liquidation.terreno %></td>
         <td><%= liquidation.ahorro %></td>
         <td><%= liquidation.otro %></td>
-
+        <% @acum+=liquidation.efectivo.to_i  %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+  </div>
+  <div class="row">
+    <span class="col s12 m12 l2 offset-s10 offset-m10 offset-l10" style="padding-left:2.2em;"><strong>Total:</strong> <%=@acum%></span>
+  </div>
   </div>
 </div>
 </div>
