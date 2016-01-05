@@ -1,18 +1,21 @@
 <div class="row">
-  <div class="row">
+  <div class="row" id="print" >
+    <div class="row">
     <h4 class="center-align">Reporte de liquidaciones</h4>
-  </div>
-  <%=@mensaje%>
-  <%=@tipo%>
+    </div>
+    <div class="row padding-largo" >
+      <div class="col s12 m12 l12">
+        <p class="chofer"><strong>Chofer:</strong> <%=@driver.nombre%> <%=@driver.paterno%>  <%=@driver.materno%> </p>
+      </div>
+    </div>
   <div class="row padding-largo">
   <div class="col s12 m12 l12">
-  <div class="row">
   <table>
   <thead>
     <tr>
       <th>Camion</th>
-      
       <th>Turno</th>
+      <th>Fecha</th>
       <th>Efectivo</th>
       <th>Gastos</th>
       <th>Terreno</th>
@@ -20,28 +23,49 @@
       <th>Otro</th>
     </tr>
   </thead>
-<% @acum = 0 %>
+<% @efectivo = 0 
+  @gastos = 0 
+  @terreno = 0 
+  @ahorro = 0 
+  @otro = 0     
+%>
   <tbody>
     <% @liquidations.each do |liquidation| %>
       <tr>
         <td><%= link_to liquidation.camion, liquidation%></td>
         
         <td><%= liquidation.turno %></td>
+        <td><%= liquidation.fecha %></td>
         <td><%= liquidation.efectivo %></td>
         <td><%= liquidation.gastos %></td>
         <td><%= liquidation.terreno %></td>
         <td><%= liquidation.ahorro %></td>
         <td><%= liquidation.otro %></td>
-        <% @acum+=liquidation.efectivo.to_i  %>
+        <% @efectivo+=liquidation.efectivo.to_i  %>
+        <% @gastos+=liquidation.gastos.to_i  %>
+        <% @terreno+=liquidation.terreno.to_i  %>
+        <% @ahorro+=liquidation.ahorro.to_i  %>
+        <% @otro+=liquidation.otro.to_i  %>
       </tr>
     <% end %>
+      <tr class="separator">
+        <td>Total:</td>
+        <td></td>
+        <td></td>        
+        <td><%=@efectivo%></td>
+        <td><%=@gastos%></td>
+        <td><%=@terreno%></td>
+        <td><%=@ahorro%></td>
+        <td><%=@otro%></td>
+      </tr>
   </tbody>
 </table>
-
-  </div>
-  <div class="row">
-    <span class="col s12 m12 l2 offset-s10 offset-m10 offset-l10" style="padding-left:2.2em;"><strong>Total:</strong> <%=@acum%></span>
-  </div>
   </div>
 </div>
+  </div>
+  <div class="row">
+    <div class="center">
+      <a href="javascript:imprSelec('print')" target="_parent" class="btn blue">Imprimir</a>
+    </div>
+  </div>
 </div>
