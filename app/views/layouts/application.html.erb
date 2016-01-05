@@ -13,19 +13,19 @@
 <body class="grey lighten-5" >
   <div class="navbar-fixed light-blue darken-3">
     <nav class="light-blue darken-3">
-      <div class="nav-wrapper ">
+      <div class="nav-wrapper container">
         
-        <%= link_to "Inicio", root_path, class: 'brand-logo' %>
+        <%= link_to "", root_path, class: 'brand-logo', id: 'inicio' %>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <%if user_signed_in?%>
-            <li><%= link_to "Reportes", report_index_path  %></li>
-            <li><%= link_to "Liquidaciones", liquidations_path  %></li>
-            <li><%= link_to "Choferes", drivers_path  %></li>
-            <li><%= link_to "Titulares", titulars_path  %></li>
-            <li><%= link_to "Camiones", trucks_path  %></li>
-            <li><%= link_to "Rutas", ruta_path %></li>
-            <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, class: 'ion-log-out' %> </li>
+            <li><%= link_to "Reportes", report_index_path, id: 'report'  %></li>
+            <li><%= link_to "Liquidaciones", liquidations_path, id: 'liq'  %></li>
+            <li><%= link_to "Choferes", drivers_path, id: 'driver'  %></li>
+            <li><%= link_to "Titulares", titulars_path, id: 'titular'  %></li>
+            <li><%= link_to "Camiones", trucks_path, id: 'truck'  %></li>
+            <li><%= link_to "Rutas", ruta_path, id: 'route' %></li>
+            <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, id: 'salida' %> </li>
           <%end%>
         </ul>
         <ul class="side-nav" id="mobile-demo">
@@ -67,7 +67,9 @@
   <script>
   $(document).ready(function() {
     paginas();
+    menu();
   });
 </script>
 </body>
 </html>
+

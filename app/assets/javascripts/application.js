@@ -15,13 +15,31 @@
 //= require turbolinks
 //= require_tree .
 
+function menu () {
+	report = '<i class="ion-document-text left"></i>';
+	truck = '<i class="ion-android-bus left"></i>'; 
+	route = '<i class="ion-android-navigate left"></i>'; 
+	titular = '<i class="ion-android-person left"></i>'; 
+	driver = '<i class="ion-android-contact left"></i>'; 
+	salida = '<i class="ion-android-exit left"></i>';  
+	liq = '<i class="ion-social-usd left"></i>';  
+	home = '<i class="ion-home left"></i>';  
+	$("#inicio").append(home);
+	$("#report").append(report);
+	$("#truck").append(truck);
+	$("#route").append(route);
+	$("#titular").append(titular);
+	$("#driver").append(driver);
+	$("#salida").append(salida);
+	$("#liq").append(liq);
+	console.log("report"+report);
+}
  function getDate() {
 	var f = new Date();
 	fecha= f.getFullYear() + "-"+(f.getMonth() +1)+ "-"+f.getDate() ;
 	ver = $("#liquidation_fecha").val();
 	console.log(fecha)
-
-		$("#liquidation_fecha").val(fecha);	
+	$("#liquidation_fecha").val(fecha);	
 
  }
 

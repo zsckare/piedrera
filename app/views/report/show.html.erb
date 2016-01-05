@@ -1,71 +1,89 @@
 <div class="row">
   <div class="row" id="print" >
     <div class="row">
-    <h4 class="center-align">Reporte de liquidaciones</h4>
+    <h4 class="center-align">Reporte de Liquidaciones</h4>
+    </div>
+    <div class="row padding-largo ">
+      <div class="col s12 m12 l12">
+        <p class="chofer" ><strong>Fecha: </strong><span id="liquidation_fecha"></p>
+      </div>
     </div>
     <div class="row padding-largo" >
       <div class="col s12 m12 l12">
         <p class="chofer"><strong>Chofer:</strong> <%=@driver.nombre%> <%=@driver.paterno%>  <%=@driver.materno%> </p>
       </div>
+
     </div>
+    
   <div class="row padding-largo">
   <div class="col s12 m12 l12">
-  <table>
-  <thead>
-    <tr>
-      <th>Camion</th>
-      <th>Turno</th>
-      <th>Fecha</th>
-      <th>Efectivo</th>
-      <th>Gastos</th>
-      <th>Terreno</th>
-      <th>Ahorro</th>
-      <th>Otro</th>
-    </tr>
-  </thead>
-<% @efectivo = 0 
-  @gastos = 0 
-  @terreno = 0 
-  @ahorro = 0 
-  @otro = 0     
-%>
-  <tbody>
-    <% @liquidations.each do |liquidation| %>
+    <table>
+    <thead>
       <tr>
-        <td><%= link_to liquidation.camion, liquidation%></td>
-        
-        <td><%= liquidation.turno %></td>
-        <td><%= liquidation.fecha %></td>
-        <td><%= liquidation.efectivo %></td>
-        <td><%= liquidation.gastos %></td>
-        <td><%= liquidation.terreno %></td>
-        <td><%= liquidation.ahorro %></td>
-        <td><%= liquidation.otro %></td>
-        <% @efectivo+=liquidation.efectivo.to_i  %>
-        <% @gastos+=liquidation.gastos.to_i  %>
-        <% @terreno+=liquidation.terreno.to_i  %>
-        <% @ahorro+=liquidation.ahorro.to_i  %>
-        <% @otro+=liquidation.otro.to_i  %>
+        <th>Camion</th>
+        <th>Turno</th>
+        <th>Fecha</th>
+        <th>Efectivo</th>
+        <th>Gastos</th>
+        <th>Terreno</th>
+        <th>Ahorro</th>
+        <th>Otro</th>
       </tr>
-    <% end %>
-      <tr class="separator">
-        <td>Total:</td>
-        <td></td>
-        <td></td>        
-        <td><%=@efectivo%></td>
-        <td><%=@gastos%></td>
-        <td><%=@terreno%></td>
-        <td><%=@ahorro%></td>
-        <td><%=@otro%></td>
-      </tr>
-  </tbody>
-</table>
+    </thead>
+  <% @efectivo = 0 
+    @gastos = 0 
+    @terreno = 0 
+    @ahorro = 0 
+    @otro = 0     
+  %>
+    <tbody>
+      <% @liquidations.each do |liquidation| %>
+        <tr>
+          <td><%= link_to liquidation.camion, liquidation%></td>
+          
+          <td><%= liquidation.turno %></td>
+          <td><%= liquidation.fecha %></td>
+          <td><%= liquidation.efectivo %></td>
+          <td><%= liquidation.gastos %></td>
+          <td><%= liquidation.terreno %></td>
+          <td><%= liquidation.ahorro %></td>
+          <td><%= liquidation.otro %></td>
+          <% @efectivo+=liquidation.efectivo.to_i  %>
+          <% @gastos+=liquidation.gastos.to_i  %>
+          <% @terreno+=liquidation.terreno.to_i  %>
+          <% @ahorro+=liquidation.ahorro.to_i  %>
+          <% @otro+=liquidation.otro.to_i  %>
+        </tr>
+      <% end %>
+        <tr class="separator">
+          <td>Total:</td>
+          <td></td>
+          <td></td>        
+          <td><%=@efectivo%></td>
+          <td><%=@gastos%></td>
+          <td><%=@terreno%></td>
+          <td><%=@ahorro%></td>
+          <td><%=@otro%></td>
+        </tr>
+    </tbody>
+  </table>
+    </div>
   </div>
-</div>
+  
   </div>
-  <div class="row">
+  <div class="row ">
     <div class="center">
-      <a href="javascript:imprSelec('print')" target="_parent" class="btn blue">Imprimir</a>
+      <a href="javascript:imprSelec('print')" target="_parent" class="btn blue">Imprimir <i class="ion-printer left"></i>  </a>
     </div>
   </div>
 </div>
+<script>
+  $(document).ready(function() {
+    var f = new Date();
+    fecha= f.getFullYear() + "-"+(f.getMonth() +1)+ "-"+f.getDate() ;
+    ver = $("#liquidation_fecha").val();
+    console.log(fecha)
+    $("#liquidation_fecha").html(fecha); 
+
+  });
+</script>
