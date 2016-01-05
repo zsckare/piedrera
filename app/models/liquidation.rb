@@ -2,17 +2,23 @@ class Liquidation < ActiveRecord::Base
   belongs_to :driver
 
   def self.camion(numero)
-  	where(:camion => numero).order("created_at DESC")
+  	where(:camion => numero)
   end
+  
   def self.chofer(chofer)
-  	where("driver_id == ?", chofer).order("created_at DESC")
+  	where(:driver_id => chofer)
   end
+  
   def self.rango(desde,hasta)
-  	where("fecha >= ?", desde).order("created_at DESC")
+    where("fecha >= :init_edad AND fecha <= :fin_edad", {init_edad: desde, fin_edad: hasta})
   end
 
-  def self.advanced(chofer,numero,desde,hasta)
-    where("driver_id == ?", chofer, "camion == ?", numero).order("created_at DESC")
+  def self.desde(desde)
+    where("fecha >= :init_edad ", {init_edad: desde})
+  end
+
+  def self.avanzado(chofer,camion)
+    where("driver_id = :init_edad AND camion = :fin_edad", {init_edad: chofer, fin_edad: camion})
   end
 
 end

@@ -11,15 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="row">
+      <div class="input-field col s12 m12 l12">
     <%= f.label :numero %><br>
     <%= f.text_field :numero %>
   </div>
-  <div class="field">  
+  <div class="input-field col s12 m12 l12">  
     <%= f.label :titular_id %><br>
     <%= f.collection_select :titular_id, Titular.all, :id, :NombreCompleto, include_blank: true%>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  </div>
+  <div class="row">
+    <div class="center-align">
+      <%= f.submit class: 'btn blue' %>
+    </div>
   </div>
 <% end %>

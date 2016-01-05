@@ -8,7 +8,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row">
     <div class="input-field col s12 m12 l4 offset-l4">
-      <%= f.label :username %>
+      <%= f.label :username, "Usuario" %>
       <%= f.text_field :username, autofocus: true %>
     </div>
   </div>
