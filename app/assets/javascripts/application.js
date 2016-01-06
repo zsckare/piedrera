@@ -32,13 +32,11 @@ function menu () {
 	$("#driver").append(driver);
 	$("#salida").append(salida);
 	$("#liq").append(liq);
-	console.log("report"+report);
 }
  function getDate() {
 	var f = new Date();
 	fecha= f.getFullYear() + "-"+(f.getMonth() +1)+ "-"+f.getDate() ;
 	ver = $("#liquidation_fecha").val();
-	console.log(fecha)
 	$("#liquidation_fecha").val(fecha);	
 
  }
@@ -109,12 +107,12 @@ var url="http://" + window.location.hostname+":"+puerto;
 
  function imprSelec(nombre)
 {
-var articulo = document.getElementById(nombre);
-var ventimp = window.open(' ','Nota','no','no','50','no','no','no','no','no','no','no','no','50');
-ventimp.document.write(articulo.innerHTML );
-ventimp.document.close();
-ventimp.print( );
-ventimp.close();
+	var articulo = document.getElementById(nombre);
+	var ventimp = window.open(' ','Nota','no','no','50','no','no','no','no','no','no','no','no','50');
+	ventimp.document.write(articulo.innerHTML );
+	ventimp.document.close();
+	ventimp.print( );
+	ventimp.close();
 }
 
 function paginas() {

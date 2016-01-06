@@ -1,33 +1,53 @@
-<h2>Registrarse</h2>
+<div class="row">
+  <div class="col s12 m12 l12">
+    <div class="row">
+      <h4 class="center-align">Nuevo Usuario</h4>
+    </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-  <div class="input-field">
-    <%= f.label :username %>
-    <%= f.text_field :username, autofocus: true %>
+  <div class="row">
+    <div class="input-field col s12 m12 l4 offset-l4">
+      <%= f.label :username, "Usuario" %>
+      <%= f.text_field :username, autofocus: true %>
+    </div>
   </div>
 
-  <div class="input-field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %>
+  <div class="row">
+    <div class="input-field col s12 m12 l4 offset-l4">
+      <%= f.label :email, "Correo Electronico" %>
+      <%= f.email_field :email %>
+    </div>
   </div>
 
-  <div class="input-field">
-    <%= f.label :password, "Contraseña"%>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %>
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="row">
+    <div class="input-field col s12 m12 l4 offset-l4">
+      <%= f.label :password, "Contraseña"%>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characteres minimo)</em>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
   </div>
 
-  <div class="input-field">
-    <%= f.label :password_confirmation, "Confirmar Contraseña"%>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class="row">
+    <div class="input-field  col s12 m12 l4 offset-l4">
+      <%= f.label :password_confirmation, "Confirmar Contraseña"%>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Registrarse", class: 'btn' %>
+  <div class="row">
+    <div class="center-align">
+      <%= f.submit "Registrarse", class: 'btn blue' %>
+    </div>
+    <div class="center-align">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+
+  </div>
+</div>
