@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body class="grey lighten-5" >
+  <%if notice%>
+    <div id="notice_wrapper">
+      <p class="notice"><%=notice%></p>
+    </div>
+  <%elsif alert%>
+    <div id="notice_wrapper">
+      <p class="alert"><%=alert%></p>
+    </div>
+  <%end%>
   <div class="navbar-fixed light-blue darken-3">
     <nav class="light-blue darken-3">
       <div class="nav-wrapper ">
@@ -51,11 +60,6 @@
 		</div>
 	</div>
   
-  <%if notice%>
-  <p class="notice">    <%=notice%>  </p>
-  <%elsif alert%>
-  <p class="alert">    <%=alert%>  </p>
-  <%end%>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js" ></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script>
@@ -68,6 +72,11 @@
   $(document).ready(function() {
     paginas();
     menu();
+    setTimeout(function() {
+      $("#notice_wrapper").fadeOut("slow", function() {
+        $(this).remove();
+      });
+    }, 3000);
   });
 </script>
 </body>

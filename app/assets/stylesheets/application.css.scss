@@ -33,7 +33,7 @@ select{
 .top-space{
 	margin-top: .5em !important;
 }
-.notice, .alert{
+.notices, .alerts{
 
   border-radius: 2px;
   bottom: 10;
@@ -94,4 +94,15 @@ select{
 }
 .separator{
   border-top: 1px solid $border;
+}
+#notice_wrapper{
+  position: absolute;
+  top: 4.2em;
+  width: 100%;
+  z-index: 10000;
+  background: rgba(244,67,54,0.9);
+  .notice, .alert{
+    text-align: center;
+    color: #fff;
+  }
 }
