@@ -23,7 +23,7 @@ function menu () {
 	driver = '<i class="ion-android-contact left"></i>'; 
 	salida = '<i class="ion-android-exit left"></i>';  
 	liq = '<i class="ion-social-usd left"></i>';  
-	home = '<i class="ion-home left"></i>';  
+	home = '<i class="ion-home "></i>';  
 	$("#inicio").append(home);
 	$("#report").append(report);
 	$("#truck").append(truck);
