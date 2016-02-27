@@ -74,9 +74,10 @@
     paginas();
     menu();
     setTimeout(function() {
-      $("#notice_wrapper").fadeOut("slow", function() {
+      $("#notice_wrapper").slideUp();
+      /*$("#notice_wrapper").fadeOut("slow", function() {
         $(this).remove();
-      });
+      });*/
     }, 3000);
   });
 </script>

@@ -1,6 +1,6 @@
 class TitularsController < ApplicationController
   before_action :set_titular, only: [:show, :edit, :update, :destroy]
-
+  @btn = ""
   # GET /titulars
   # GET /titulars.json
   def index
@@ -15,10 +15,12 @@ class TitularsController < ApplicationController
   # GET /titulars/new
   def new
     @titular = Titular.new
+      @btn = "Agregar Titular"
   end
 
   # GET /titulars/1/edit
   def edit
+      @btn = "Editar Titular"
   end
 
   # POST /titulars

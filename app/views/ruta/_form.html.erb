@@ -10,12 +10,17 @@
       </ul>
     </div>
   <% end %>
+<div class="row">
+  
+    <div class="input-field s12 m12 l10 offset-l1">
+      <%= f.label :nombre %>
+      <%= f.text_field :nombre %>
+    </div>
+</div>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </div>
+<div class="row">
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>

@@ -1,6 +1,6 @@
 class RutaController < ApplicationController
   before_action :set_rutum, only: [:show, :edit, :update, :destroy]
-
+    @btn = ""
   # GET /ruta
   # GET /ruta.json
   def index
@@ -15,10 +15,12 @@ class RutaController < ApplicationController
   # GET /ruta/new
   def new
     @rutum = Rutum.new
+      @btn = "Agregar Ruta"
   end
 
   # GET /ruta/1/edit
   def edit
+    @btn = "Editar Ruta"
   end
 
   # POST /ruta

@@ -1,8 +1,11 @@
 class DriversController < ApplicationController
   before_action :set_driver, only: [:show, :edit, :update, :destroy]
 
+
+  @btn = ""
   # GET /drivers
   # GET /drivers.json
+
   def index
     @drivers = Driver.all.paginate(page: params[:page], per_page: 7)
   end
@@ -15,10 +18,12 @@ class DriversController < ApplicationController
   # GET /drivers/new
   def new
     @driver = Driver.new
+    @btn = "Agregar Chofer"
   end
 
   # GET /drivers/1/edit
   def edit
+    @btn = "Editar Chofer"
   end
 
   # POST /drivers

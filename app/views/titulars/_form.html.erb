@@ -10,20 +10,26 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :nombre %><br>
+  <div class="row">
+  <div class="input-field col s12 m12 l10 offset-l1">
+    <%= f.label :nombre %>
     <%= f.text_field :nombre %>
   </div>
-  <div class="field">
-    <%= f.label :paterno %><br>
+</div>
+  <div class="row">
+  <div class="input-field col s12 m12 l10 offset-l1">
+    <%= f.label :paterno %>
     <%= f.text_field :paterno %>
   </div>
-  <div class="field">
-    <%= f.label :materno %><br>
+</div>
+  <div class="row">
+  <div class="input-field col s12 m12 l10 offset-l1">
+    <%= f.label :materno %>
     <%= f.text_field :materno %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+  <div class="row">
+  <div class="center">
+    <%= f.submit @btn, class: 'btn blue' %>
+  </div></div>
 <% end %>

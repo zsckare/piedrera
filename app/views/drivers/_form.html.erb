@@ -11,23 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+  <div class="row">
+    <div class="input-field col s12 m12 l10 offset-l1">
+      <%= f.label :nombre %><br>
+      <%= f.text_field :nombre %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :paterno %><br>
-    <%= f.text_field :paterno %>
+  <div class="row">
+    
+    <div class="input-field col s12 m12 l10 offset-l1">
+      <%= f.label :paterno %><br>
+      <%= f.text_field :paterno %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :materno %><br>
-    <%= f.text_field :materno %>
+  <div class="row">
+  <div class="input-field col s12 m12 l10 offset-l1">
+      <%= f.label :materno %><br>
+      <%= f.text_field :materno %>
+    </div>
+    </div>
+  <div class="row">
+    <div class="input-field col s12 m12 l10 offset-l1">
+      <%= f.label :sindical %><br>
+      <%= f.text_field :sindical %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :sindical %><br>
-    <%= f.text_field :sindical %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">    
+    <div class="center-align">
+      <%= f.submit @btn, class: 'btn blue' %>
+    </div>
   </div>
 <% end %>

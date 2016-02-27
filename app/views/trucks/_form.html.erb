@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="row">
-      <div class="input-field col s12 m12 l12">
+      <div class="input-field col s12 m12 l10 offset-l1">
     <%= f.label :numero %><br>
     <%= f.text_field :numero %>
   </div>
-  <div class="input-field col s12 m12 l12">  
+  <div class="input-field col s12 m12 l10 offset-l1">  
     <%= f.label :titular_id %><br>
     <%= f.collection_select :titular_id, Titular.all, :id, :NombreCompleto, include_blank: true%>
   </div>
   </div>
   <div class="row">
     <div class="center-align">
-      <%= f.submit class: 'btn blue' %>
+      <%= f.submit @btn, class: 'btn blue' %>
     </div>
   </div>
 <% end %>

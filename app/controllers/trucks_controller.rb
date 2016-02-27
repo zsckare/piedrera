@@ -1,6 +1,6 @@
 class TrucksController < ApplicationController
   before_action :set_truck, only: [:show, :edit, :update, :destroy]
-
+  @btn = ""
   # GET /trucks
   # GET /trucks.json
   def index
@@ -15,10 +15,12 @@ class TrucksController < ApplicationController
   # GET /trucks/new
   def new
     @truck = Truck.new
+      @btn = "Agregar Camion"
   end
 
   # GET /trucks/1/edit
   def edit
+      @btn = "Editar Camion"
   end
 
   # POST /trucks
